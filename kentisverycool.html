@@ -1,68 +1,82 @@
 <html>
 <head>
-    
-   <style>
-       .box{ width: 50px; height: 50px; margin:5px; position: relative;}
-       #C { background-color: purple; }
-       #A { background-color: rebeccapurple; }
-       #E { background-color: goldenrod; }
-       #G { background-color: crimson; }
-       #D { background-color: rgb(114, 158, 197); }
-       #F { background-color: red; }
-   </style>
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-     <script>
-         $(document).ready(function() {
+    <style>
+        .box{ width: 50px; height: 50px; margin:5px; position: relative;}
+        #C { background-color: purple; }
+        #A { background-color: rebeccapurple; }
+        #E { background-color: goldenrod; }
+        #G { background-color: crimson; }
+        #D { background-color: rgb(114, 158, 197); }
+        #F { background-color: red; }
+    </style>
+   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+    <script>
+        var score = 0;
+        function count() {
+            
+            score = score + 1;
+            console.log(score);
+            $("#score").html(score);
+        }
+        alert(score);
+
+        $(document).ready(function() {
             $('#C').mousedown(function() {
-                $('#horse')[0].play();     
+                $('#horse')[0].play();
+                $('#C').animate({left: Math.random()*100, top: "139px"}, 200);
+                console.count("clicks")
+                count();
+            });
+
+            $('#D').mousedown(function() {
+                $('#scream')[0].play();
+                $('#D').animate({left: Math.random()*100, top: "139px"}, 200);
+                console.count("clicks")
+                count();
+            });
+
+            $('#A').mousedown(function() {
+                $('#horse')[0].play();
+                $('#A').animate({left: Math.random()*100, top: "139px"}, 200);
+                console.count("clicks")
+                count();
+            });
+            $('#E').mousedown(function() {
+                $('#horse')[0].play();
+                $('#E').animate({left: Math.random()*100, top: "139px"}, 200);
+                console.count("clicks")
+                count();
+            });
+
+            $('#F').mousedown(function() {
+                $('#horse')[0].play();
+                $('#F').animate({left: Math.random()*100, top: "139px"}, 200);
+                console.count("clicks")
+                count();
+            });
+
+            $('#G').mousedown(function() {
+                $('#horse')[0].play();
+                $('#G').animate({left: Math.random()*100, top: "139px"}, 200);
+                console.count("clicks")
+                count();
             });
         });
-        //alert('hello');
-        $('#D').mousedown(function() {
-                $('#scream')[0].play();     
-            });
-     
-        $('#A').mousedown(function() {
-                $('#horse')[0].play();     
-            });
-
-
-        $('#E').mousedown(function() {
-                $('#horse')[0].play();     
-            });
-    
-        $('#F').mousedown(function() {
-                $('#horse')[0].play();     
-            });
-         
-        $('#g').mousedown(function() {
-                $('#horse')[0].play();     
-            });
-   
     </script>
-
 </head>
 
 <body>
 
-                
-        
-    <audio id="cAudio"></audio>
-    <audio id="dAudio"></audio>
-    <audio id="eAudio"></audio>
-    <audio id="fAudio"></audio>
-    <audio id="gAudio"></audio>
-    <audio id="aAudio"></audio>
-    <audio id="bAudio"></audio>
-
-    
     <audio id="horse" hidden>
         <source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <audio id="scream">
-        <source src="/assets/59163_timtube_scream-2.wav" type="audio/wav">
+    <audio id="scream" hidden>
+        <source src="/assets/438912__thedavedude__homemadeoof.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
   
@@ -72,6 +86,12 @@
     <div class="box" id= "G"></div>
     <div class="box" id= "F"></div>
     <div class="box" id= "D"></div>
+    <div>
+<h1>
+    Score <span id="score">Score Goes Here</span>
+</h1>
+
+ 
 
 </body>
 </html>
