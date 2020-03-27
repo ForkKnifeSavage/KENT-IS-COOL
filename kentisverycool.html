@@ -9,10 +9,42 @@
         #G { background-color: crimson; }
         #D { background-color: rgb(114, 158, 197); }
         #F { background-color: red; }
+        body{
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+         -moz-user-select: none;
+        -ms-user-select: none;
+         user-select: none;
+}
+
     </style>
    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+            };
+        async function move(){
+            while (true) {
+                $('#A').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 650);
+                $('#C').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 800);
+                $('#D').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 900);
+                $('#E').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 750);
+                $('#F').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 850);
+                $('#G').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 880);
+                await sleep(100);
+
+                if (score == 1){
+            alert("you win -_-");
+            location.reload();
+
+        };
+            };
+        };
+        move();
+       </script>
    
     <script>
         var score = 0;
@@ -26,59 +58,62 @@
 
         $(document).ready(function() {
             $('#C').mousedown(function() {
-                $('#horse')[0].play();
-                $('#C').animate({left: Math.random()*100, top: "139px"}, 200);
+                $('#scream')[0].play();
                 console.count("clicks")
                 count();
+                
             });
 
             $('#D').mousedown(function() {
-                $('#scream')[0].play();
-                $('#D').animate({left: Math.random()*100, top: "139px"}, 200);
-                console.count("clicks")
+                $('#k')[0].play();
                 count();
             });
 
             $('#A').mousedown(function() {
-                $('#horse')[0].play();
-                $('#A').animate({left: Math.random()*100, top: "139px"}, 200);
+                $('#scream')[0].play();
                 console.count("clicks")
                 count();
             });
             $('#E').mousedown(function() {
-                $('#horse')[0].play();
-                $('#E').animate({left: Math.random()*100, top: "139px"}, 200);
+                $('#k')[0].play();
                 console.count("clicks")
                 count();
             });
 
             $('#F').mousedown(function() {
-                $('#horse')[0].play();
-                $('#F').animate({left: Math.random()*100, top: "139px"}, 200);
+                $('#scream')[0].play();
                 console.count("clicks")
                 count();
             });
 
             $('#G').mousedown(function() {
-                $('#horse')[0].play();
-                $('#G').animate({left: Math.random()*100, top: "139px"}, 200);
+                $('#k')[0].play();
                 console.count("clicks")
                 count();
             });
         });
+
+      
     </script>
+    
 </head>
 
-<body>
 
-    <audio id="horse" hidden>
-        <source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+<body>
+    <audio controls autoplay><source src="/assets/203105__tambascot__dragon-roar (1).wav" type="audio/wav"></audio>
+
+
+    <audio id="k" hidden>
+        <source src="/assets/59163__timtube__scream-2.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
     <audio id="scream" hidden>
         <source src="/assets/438912__thedavedude__homemadeoof.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
+  
+    
+
   
     <div class="box" id= "A"></div>
     <div class="box" id= "C"></div>
